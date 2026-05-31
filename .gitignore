@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+._*
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+
+# Local Claude config (per-user)
+.claude/settings.local.json
+
+# Temporary
+*.tmp
+*.bak
+*.swp
+~*
