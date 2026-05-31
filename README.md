@@ -4,7 +4,7 @@
 
 ## 特徴
 
-- **15 件の失敗事例** (LL1-15) を踏まえた防護策が Phase + Constraints の多層配置
+- **19 件の失敗事例** (LL1-19) を踏まえた防護策が Phase + Constraints の多層配置 — 詳細は [lessons-learned.md](lessons-learned.md)
 - **8 Phase ワークフロー** (identify → 投入要求 → 自律取得 → Layer 1 → Layer 2 → Layer 3 → Layer 4 → 留意点)
 - 既存 rubric が無い領域では **新規 rubric 作成** を提案
 - **転職サービス別 pivot** (Findy / ビズリーチ / doda / LinkedIn / レバテック / LAPRAS / 転職ドラフト) に対応
@@ -74,11 +74,12 @@ research/career/<userid>/
 
 | ファイル | 用途 |
 |---|---|
-| `SKILL.md` | skill 本体 (8 Phase ワークフロー + 15 件の Lessons learned) |
+| `SKILL.md` | skill 本体 (8 Phase ワークフロー + Lessons learned index) |
+| `lessons-learned.md` | 失敗事例集 (LL1-19 / Phase 別) — SKILL.md から index 参照 |
 | `checklists/data-intake-checklist.md` | Phase 1 で提示する完全チェックリスト (A-F 6 系統) |
 | `templates/integrated-cv-template.md` | Layer 4 の統合 CV (読み物) 章スケルトン |
 | `templates/project-portfolio-template.md` | Layer 4 の転職サービス向け portfolio 章スケルトン (8 章 / メイン + トグル 2 段化) |
-| `templates/research-area-template.md` | Layer 1 の領域別ノート構造 |
+| `templates/research-area-template.md` | Layer 1 の領域別ノート構造 (§前史 + §観察 を含む) |
 | `templates/month-by-month-template.md` | Layer 2 月別表の構造 + 出典タグ凡例 |
 
 ## 関連する外部 rubric / sources
@@ -97,7 +98,7 @@ MIT (詳細は [LICENSE](LICENSE) を参照)
 
 ## Contributing
 
-LL16+ の失敗事例追加 / 新規 rubric 提案は歓迎します。 PR でお願いします。
+LL20+ の失敗事例追加 / 新規 rubric 提案は歓迎します。 PR でお願いします。
 
 ## Acknowledgments
 
