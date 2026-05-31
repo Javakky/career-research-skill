@@ -191,13 +191,14 @@ PJ 重み付けは [<userid>-evaluation-<yyyy-qN>.md](<userid>-evaluation-<yyyy-
 
 | 項目 | 値 |
 |---|---:|
-| FY<YYYY> 給与収入 | <X> 円 (<会社>) |
-| FY<YYYY> 営業等 (事業) 収入 | <Y> 円 (<契約先>) |
-| FY<YYYY> 還付額 | <Z> 円 |
+| <YYYY> 年分 給与収入 | <X> 円 (<会社>) |
+| <YYYY> 年分 営業等 (事業) 収入 | <Y> 円 (<契約先>) |
+| <YYYY> 年分 還付額 | <Z> 円 |
+| 集計期間 | 個人事業は暦年 (<YYYY>-01-01 〜 <YYYY>-12-31) / 法人は事業年度 |
 | 個人事業 開業日 | <YYYY-MM-DD> |
 | 個人事業 開業届提出日 | <YYYY-MM-DD> (LL3: 別の日付の可能性に注意) |
 
-詳細は [_intermediate/fy<yyyy>-tax-return-summary.md](_intermediate/fy<yyyy>-tax-return-summary.md) を参照。
+詳細は [_intermediate/tax-return-<yyyy>.md](_intermediate/tax-return-<yyyy>.md) を参照。 個人事業は暦年 (1/1-12/31)、 法人は事業年度で集計する (LL17)。
 
 </details>
 

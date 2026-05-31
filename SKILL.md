@@ -26,7 +26,7 @@ research/career/<userid>/
     gitlab-<host>-contributions.md
     public-profiles.md
     card-game-activity-profile.md (任意)
-    fy<yyyy>-tax-return-summary.md (任意)
+    tax-return-<yyyy>.md (任意 / 個人事業は暦年 = 1/1-12/31 / 法人は事業年度)
   _pj-evaluations/                            # Layer 3: PJ 別 2 軸評価
     _metadata.yaml                            # 全 PJ メタ集約 (1 ファイル / ファミリ別 yaml は使わない)
     <family>/<pj>-2axis-evaluation.md
@@ -138,7 +138,7 @@ prompt: "/career-research ... ### A. GitHub: alice ... ### F. 学校: 〇〇大�
 | `gitlab-<host>-contributions.md` | プロジェクト別 MR + ローカル git log で全期間補完 |
 | `public-profiles.md` | SNS / ブログ / 動画統合プロフィール |
 | `<domain>-activity-profile.md` (任意) | ドメイン固有 (競技ゲーム / 同人創作 / e スポーツ 等) |
-| `fy<yyyy>-tax-return-summary.md` (任意) | 確定申告サマリ (副業 anchor 用) |
+| `tax-return-<yyyy>.md` (任意) | 確定申告サマリ (副業 anchor 用) — **個人事業は暦年 (1/1-12/31)**、 法人は事業年度。 `fy` 接頭辞は誤誘導なので使わない (LL17) |
 
 ### Phase 5: Layer 3 — PJ 別 2 軸評価 (キモ / 必須)
 
