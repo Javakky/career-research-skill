@@ -196,6 +196,14 @@ prompt: "/career-research ... ### A. GitHub: alice ... ### F. 学校: 〇〇大�
 - **Senior 中堅 / Junior 判定の PJ**: トグル (200-300 字) で網羅性を担保
 - **「シニア標準で当たり前」 の項目 (PSR / Conventional Commits / Hexagonal namespace 等)**: N/A 除外で採点 (ボーナス点ではなく設計判断の実体を測る)
 
+#### 5.4 単独 PJ 採点 / 簡易採点モードの注意 (LL18)
+
+軽量検品 (注力 PJ 1-2 件のみ / Layer 3 をフル展開しない場合) で portfolio.md にスコアを書くとき、 anchor 不明確のまま % を出すと誤読される。 次のガイドに従う:
+
+- **% は比較 anchor を必ず明示**: 「設計品質 75%」 だけでは読めない。 「(本人の本業 Scala PJ を 80% とした場合の) 75%」 / 「(WordPress 案件 median を 60% とした場合の) 75%」 のように **比較対象を明示**する。 anchor が組めないなら数値を出さない
+- **年収 anchor は実態原則**: 副業実収入 (例: 200-300 万 / 年) を main anchor として書く。 フルタイム換算 (例: 400-600 万 / 年) を出す場合は **補助として並列表記** し、 「(実態は月 N h 程度 / 換算は機会値)」 と注記する。 換算値だけを書くと過大評価になる
+- **質的表現で代替する選択肢**: anchor が組めない単独 PJ では、 数値の代わりに「Senior 中堅相当」 等の質的表現 + 強み / 弱みの列挙で代替する
+
 ### Phase 6: Layer 4 — integrated-cv + project-portfolio
 
 #### 6.0 必須 / 任意の階層 (検品 LL15: 成果物の優先順位)
@@ -302,6 +310,7 @@ prompt: "/career-research ... ### A. GitHub: alice ... ### F. 学校: 〇〇大�
 - **Commit**: Conventional Commits (commit するかは別途確認)
 - **Context separation**: work / side / hobby を混在させない
 - **揮発性ディレクトリ依存禁止**: `~/Downloads/` 等のファイルは必ず `<userid>/assets/` にコピー
+- **一次資料の要点転記** (LL19): PDF / .md / pptx 等の一次資料は assets/ にコピーした上で、 **要点 (≦20 行程度 / 表 / 手順 / 固有名詞 / 原文の立ち位置宣言)** を該当 research-area ノート本文に転記する。 assets/ への保全だけでは narrative が組めない (例: 12 ステップフロー PDF は本文に転記しないと §観察 「権限スコープの段階拡張」 が書けない / 改善提案書の「(例) 当時は外部視点である」 宣言は原文引用すべき)
 - **secret 出力禁止**: 月次面談 Notion / Slack DM 等から取得しても、 社外秘事項 (顧客名 / 売上数値 / NDA 情報) は CV / portfolio に書かない。 マスク対応 (社内クラス名 → 機能名 / 社内アプリ名 → 「特定の社内アプリ」 等)
 - **事実ベース**: 各記述は出典に紐付ける。 推測は「(推定)」 マークを付け、 別 §「留意点」 にも書く
 - **本人寄与判定**: チーム PJ で本人 user_id を **必ず確定** (`notion-get-users self` / `git log --author`) してから採点する。 参加 ≠ 担当 / 推測 ID で採点しない
