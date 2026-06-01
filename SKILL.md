@@ -181,7 +181,7 @@ prompt: "/career-research ... ### A. GitHub: alice ... ### F. 学校: 〇〇大�
 採点軸の選び方:
 - **既存 rubric との互換性**: design-quality-rubric / engineer-evaluation-rubric などと並ぶ採点記号 (✅/🟡/⚪/❌/N/A) + 確度ラベル (観測事実 / 外部比較 / 推定 / 未確認) を踏襲
 - **学年別 / 役職別の到達点**: 学生期は学年別、 社会人期はジュニア / Senior / Staff の段階で評価軸を分ける
-- **業界 / ドメインの特性**: 競技プレイヤーなら大会出場 / 入賞 / ランキング / メディア出演 など、 ドメイン特有の軸を立てる
+- **業界 / ドメインの特性**: 業界外活動 (競技 / 創作 / メディア運営 / 教育 等) ならそのドメイン特有の軸 (継続年数 / 規模 / 業界連動 / 越境 等) を立てる
 
 新規作成時の注意:
 - **抽象採点軸のみを書く** (本人実数値は書かない / それは applied-example へ)
@@ -200,7 +200,7 @@ prompt: "/career-research ... ### A. GitHub: alice ... ### F. 学校: 〇〇大�
 
 軽量検品 (注力 PJ 1-2 件のみ / Layer 3 をフル展開しない場合) で portfolio.md にスコアを書くとき、 anchor 不明確のまま % を出すと誤読される。 次のガイドに従う:
 
-- **% は比較 anchor を必ず明示**: 「設計品質 75%」 だけでは読めない。 「(本人の本業 Scala PJ を 80% とした場合の) 75%」 / 「(WordPress 案件 median を 60% とした場合の) 75%」 のように **比較対象を明示**する。 anchor が組めないなら数値を出さない
+- **% は比較 anchor を必ず明示**: 「設計品質 75%」 だけでは読めない。 「(本人の本業注力 PJ を 80% とした場合の) 75%」 / 「(同種案件 median を 60% とした場合の) 75%」 のように **比較対象を明示**する。 anchor が組めないなら数値を出さない
 - **年収 anchor は実態原則**: 副業実収入 (例: 200-300 万 / 年) を main anchor として書く。 フルタイム換算 (例: 400-600 万 / 年) を出す場合は **補助として並列表記** し、 「(実態は月 N h 程度 / 換算は機会値)」 と注記する。 換算値だけを書くと過大評価になる
 - **質的表現で代替する選択肢**: anchor が組めない単独 PJ では、 数値の代わりに「Senior 中堅相当」 等の質的表現 + 強み / 弱みの列挙で代替する
 
@@ -303,18 +303,37 @@ prompt: "/career-research ... ### A. GitHub: alice ... ### F. 学校: 〇〇大�
 - `templates/project-portfolio-template.md` — Layer 4 の転職サービス向け portfolio 章スケルトン (8 章 / メイン + トグル 2 段化)
 - `templates/research-area-template.md` — Layer 1 の領域別ノート構造
 - `templates/month-by-month-template.md` — Layer 2 月別表の構造 + 出典タグ凡例
+- `_shared/style-guide.md` — 統合 CV / portfolio / 領域ノートの執筆スタイル指針 (汎用版 / 本人 PJ 側で上書き可)
+- `_shared/sources/recruitment-service-formats.md` — 転職サービス別 職務経歴書フォーマット比較 (Phase 6 portfolio フォーマット決定で参照)
+- `_shared/rubrics/_template/rubric-template.md` — 新規 rubric 作成時の汎用テンプレート (LL8: ドメイン固有 rubric を新規作成する際の出発点)
+
+> [!NOTE]
+> 本人 PJ 用の rubric / sources は `research/_shared/rubrics/{service,technical,ml,domain}/` と `research/_shared/sources/` に置く (skill 本体には bundle しない / プロジェクトごとに作成 + 蓄積)。 既存 rubric が無いドメインでは `_shared/rubrics/_template/rubric-template.md` をコピーして新規作成する。
 
 ## Constraints
 
 - **言語**: 日本語アウトプット (Global Instructions)
 - **Commit**: Conventional Commits (commit するかは別途確認)
 - **Context separation**: work / side / hobby を混在させない
-- **揮発性ディレクトリ依存禁止**: `~/Downloads/` 等のファイルは必ず `<userid>/assets/` にコピー
-- **一次資料の要点転記** (LL19): PDF / .md / pptx 等の一次資料は assets/ にコピーした上で、 **要点 (≦20 行程度 / 表 / 手順 / 固有名詞 / 原文の立ち位置宣言)** を該当 research-area ノート本文に転記する。 assets/ への保全だけでは narrative が組めない (例: 12 ステップフロー PDF は本文に転記しないと §観察 「権限スコープの段階拡張」 が書けない / 改善提案書の「(例) 当時は外部視点である」 宣言は原文引用すべき)
+- **揮発性ディレクトリ依存禁止**: `~/Downloads/` 等のファイルは必ず `<userid>/assets/` にコピー (外部 HDD / 物理メディアは別軸 / LL26)
+- **一次資料の要点転記** (LL19): PDF / .md / pptx 等の一次資料は assets/ にコピーした上で、 **要点 (≦20 行程度 / 表 / 手順 / 固有名詞 / 原文の立ち位置宣言)** を該当 research-area ノート本文に転記する
 - **secret 出力禁止**: 月次面談 Notion / Slack DM 等から取得しても、 社外秘事項 (顧客名 / 売上数値 / NDA 情報) は CV / portfolio に書かない。 マスク対応 (社内クラス名 → 機能名 / 社内アプリ名 → 「特定の社内アプリ」 等)
 - **事実ベース**: 各記述は出典に紐付ける。 推測は「(推定)」 マークを付け、 別 §「留意点」 にも書く
 - **本人寄与判定**: チーム PJ で本人 user_id を **必ず確定** (`notion-get-users self` / `git log --author`) してから採点する。 参加 ≠ 担当 / 推測 ID で採点しない
 - **役職の正確性**: 「就任」「主担当」 等のステータスは **本人確認後に記述**。 推測で格上げしない
+- **別アカウント名寄せ** (LL23): GitHub の個人 / 業務 / 旧 / 学籍別アカウントは Phase 0-1 で**全件名寄せ**してから Phase 2 へ。 `package.json` author / `git log --author=` / Notion user_id / Slack user_id を相互照合
+- **リポ作成日 ≠ 開発開始日** (LL24): GitHub / GitLab の `createdAt` と実開発時期を別フィールドで保持。 古いコードを後年 git 化するパターンは多い
+- **コンテスト / 受賞の Web 裏取り** (LL25): 自己申告の受賞表記は仮置きとして扱い、 主催団体公式 / 業界団体 / 公的アーカイブで照合。 裏取り不可なら `> [!NOTE]` で明記
+- **forced narrative 禁止** (LL20): 学び欄に「N 年スパンの○○の起点」「軸の系譜」「最古事例」「後年の X で繰り返される」 等の forward-looking 文を書かない。 学びが特になければ学びセクション省略で OK
+- **早期 PJ は「当時学んだ新技術」 のみで完結** (LL21): 学生期 / アルバイト期 / 入社初年度の PJ は簡略テンプレ (期間 / 役割 / 利用技術 / 概要 / 当時学んだ新技術 / 技術的制約) で完結。 「後年応用」「後輩への接続」 は書かない
+- **コード / リポベースの技術評価** (LL22): 早期 PJ では実コード読了の上で「当時学んだ新技術 (positive)」 + 「技術的制約 / 未習得点 (negative)」 を両方書く。 後年に学んだ概念で過大評価しない
+- **開始年順ソート** (LL29): 各セクション (§1-§7) 内で details / main section を**開始年 (asc)** で並べる。 main section と details の混在を許容
+- **役割境界の明示** (LL30): チーム PJ では「本人担当 (単独 / 100%)」「本人主担当 + チーム協力」「他メンバー主担当 + 本人手伝い」「チーム共通資料」「特定不可」 のいずれかで明示する
+- **「細いやつ」 は省略** (LL34): 単体で 300 字以上書けないものは portfolio に載せない。 集約 detail (例: 「学校提出課題群」) も避ける
+- **Vibe Coding / Agentic AI 駆動 PJ の役割分離** (LL38): 本人主担当 (要件 / アルゴリズム / ADR) と AI 補助実装 (フレームワーク固有コード) を明示分離。 アプリ固有技術知見が薄い旨も書く
+- **rubric 適用結果は散文で本文展開** (LL39): リンクだけで終わらせず、 rubric カテゴリ別の散文 (具体的事例 + 数値根拠 + 限界点) を本文に展開
+- **OSS co-maintainer は 3 段引き継ぎ** (LL40): 前任者からの引き継ぎ + 本人メンテ期 + 後任者への引き継ぎ の 3 段ストーリーを必ず書く
+- **細かい dep update PR は列挙しない** (LL41): 1 commit / 1 PR レベルの単発バージョンアップは「dep update 日を運用ルーチン化」 のような注記で十分
 
 ## Non-goals
 
@@ -335,20 +354,43 @@ Phase 別の概要 index:
 | | LL12 | 期間 / 役職の境界は入社時期 + リーダー登用日 + 案件継続期間で確定 |
 | | LL13 | prompt に投入情報が含まれている場合は Phase 1 スキップ (tax/副業 context では F-1 必須追加質問) |
 | | LL16 | 契約前のアウトプット系譜は §前史 として独立章にする |
+| | LL23 | 別アカウント / 学籍番号 / package.json author を最初に名寄せ |
+| | LL26 | 外部 HDD / 物理メディアの精査 (`~/Downloads/` 以外の保存場所) |
 | Phase 2 (自律取得 + 本人 user_id 確定) | LL1 | 本人 user_id を推測で使ってはいけない |
 | | LL5 | GitHub 公開リポは全件網羅 (gh repo list で確認) |
 | | LL11 | 議事録作成者 ≠ 本人主担当 (Created by フィルタの限界) |
 | | LL19 | 一次資料の要点を research-area 本文に転記 (assets/ はバックアップ) |
+| | LL24 | リポ作成日 ≠ 開発開始日 (ファイル時刻 / 本人記憶で確定) |
+| | LL25 | コンテスト / 受賞 / 公的記録の Web 裏取り |
+| | LL27 | 派生プロダクト / ADR 連動の追跡 (rubric に組み込まない) |
+| | LL28 | 業務発意 → 個人 / 友人 PJ への波及追跡 |
+| | LL35 | メンタリング案件は受講者の commit / branch を git log で追跡 |
+| | LL36 | 副業先 Slack の特定チャンネル参照で案件の実態を裏取り |
+| | LL42 | 業務リポ前身の git log 追跡 (個人 / 友人 OSS の前段) |
 | Phase 4 (中間成果物) | LL17 | 個人事業の確定申告は暦年 (`fy` 接頭辞は誤誘導) |
 | Phase 5 (rubric 選択 / 適用範囲) | LL7 | 学生期 PJ にもコード設計の rubric が必要 |
 | | LL8 | 同ドメイン内の役割差を捉える新規 rubric を躊躇わない |
 | | LL14 | rubric 適用範囲を絞る (全 PJ 採点は不要 / LL5 と対極) |
 | | LL18 | 単独 PJ 採点 / 簡易採点モードでは anchor を必ず明示 |
+| | LL31 | 学校提出課題群 / 軽量バッチは個別 detail にしない |
+| | LL34 | 「1 つずつでは書けないくらい細いやつ」 は省略 |
 | Phase 6 (Layer 4 出力) | LL6 | 学生期 PJ は章を分離 (個人プロジェクトと混ぜない) |
 | | LL9 | フォーマット基準は外部リサーチを先に |
 | | LL15 | 成果物の優先順位を明示する |
+| | LL20 | forced narrative 禁止 (学び欄の forward-looking 文) |
+| | LL21 | 早期 PJ は「当時学んだ新技術」 のみで完結 |
+| | LL22 | コード / リポベースの技術評価 (positive + negative 両方) |
+| | LL29 | 開始年順ソート (グループ内で chronological) |
+| | LL30 | 役割境界の明示 (主担当 vs 手伝い vs チーム共通資料) |
+| | LL32 | 関連 PJ のマージ判断 (役割境界が異なる場合は内訳明示) |
+| | LL33 | skill 自体を §4 に組み込む (META / 再帰構造) |
+| | LL38 | Vibe Coding / Agentic AI 駆動 PJ では役割分離 |
+| | LL39 | rubric 適用結果はリンクだけでなく散文で本文展開 |
+| | LL40 | OSS co-maintainer は前任者 → 本人 → 後任者の 3 段引き継ぎ |
+| | LL41 | 細かい dep update PR は列挙しない (運用ルーチン化の注記で十分) |
 | Phase 7 (検証 / 整合性) | LL2 | 役職は本人確認後に書く (推測で格上げしない) |
 | | LL4 | 集計数値は範囲を明示 (master ブランチ単一 / 全ブランチ / 期間) |
 | | LL10 | 整合性ファイル波及確認 |
+| | (検証チェックリスト) | forced narrative grep / 開始年順 / 役割境界 / rubric 散文 / コンテスト裏取り |
 
 詳細 (失敗の経緯 + 対策) は [lessons-learned.md](lessons-learned.md) の該当セクションを参照。
